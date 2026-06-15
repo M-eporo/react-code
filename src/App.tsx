@@ -1,11 +1,11 @@
 import './App.css'
-import ControledForm from './form/ControledForm'
+import FormValidation from './form/FormValidation'
 
 function App() {
 
   return (
     <>
-      <ControledForm/>
+      <FormValidation/>
     </>
   )
 }
