@@ -1,11 +1,11 @@
 import './App.css'
-import FormValidation from './form/FormValidation'
+import DynamicForm from './form/DynamicForm'
 
 function App() {
 
   return (
     <>
-      <FormValidation/>
+      <DynamicForm/>
     </>
   )
 }
