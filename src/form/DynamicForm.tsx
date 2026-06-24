@@ -33,7 +33,7 @@ const DynamicForm = () => {
             prev.map(skill => 
                 skill.id === id ? {...skill, [field]: value} : skill
             )
-        )
+        );
     };
 
     const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
@@ -44,7 +44,7 @@ const DynamicForm = () => {
             return;
         }
     };
-
+console.log(skills);
     return (
         <form action="" onSubmit={handleSubmit}>
             <h3>スキル一覧</h3>
@@ -67,7 +67,7 @@ const DynamicForm = () => {
                     <button
                         type="button"
                         onClick={addSkill}
-                        disabled={skills.length <= 5}
+                        disabled={skills.length >= 5}
                         style={{
                         padding: "8px 12px",
                         backgroundColor:
@@ -117,7 +117,8 @@ const DynamicForm = () => {
                     }}
                     >
                         <p>送信データ</p>
-                        <pre>{JSON.stringify(
+                        <pre>{
+                        JSON.stringify(
                                 skills.filter(skill => skill.name.trim()), 
                                 null, 
                                 2
