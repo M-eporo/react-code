@@ -1,12 +1,11 @@
 import './App.css'
-import DynamicForm from './form/DynamicForm'
-import MultiStepForm from './form/MultiStepForm'
+import ThemeToggle from './components/ThemeToggle'
 
 function App() {
 
   return (
     <>
-      <MultiStepForm/>
+      <ThemeToggle/>
     </>
   )
 }
