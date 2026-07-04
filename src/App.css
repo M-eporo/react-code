@@ -1056,3 +1056,62 @@ nav a.active {
   color: #61dafb;
   font-weight: bold;
 }
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+ 
+.skill-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+ 
+.password-strength {
+  font-size: 14px;
+  margin-top: 4px;
+}
+ 
+.multi-step-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+ 
+.progress-bar {
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+ 
+.progress {
+  height: 100%;
+  background: #4CAF50;
+  transition: width 0.3s ease;
+}
+ 
+.step-indicator {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+ 
+.step-indicator span {
+  padding: 10px;
+  border-radius: 50%;
+  background: #e0e0e0;
+}
+ 
+.step-indicator span.active {
+  background: #4CAF50;
+  color: white;
+}
+ 
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

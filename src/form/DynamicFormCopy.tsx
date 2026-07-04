@@ -10,66 +10,64 @@ const DynamicFormCopy = () => {
     ]);
     const nextIdRef = useRef(2);
 
-    const updateSkill = (id: number, field: string, value: string) => {
+    const updateSkill = (id: number, name: string, value: string) => {
         setSkills(prev => {
             prev.map(skill => {
                 if(skill.id === id) {
-                    return { ...skill, [field]: value}
-                } else {
-                    return skill;
+                    return {...skill, [name]: value}
                 }
-            })
+                else return skill;
+            });
             return prev;
         });
+        setSkills(prev => 
+            prev.map(skill => 
+                skill.id === id ? {...skill, [name]: value} : skill)
+        )
     };
 
     const addSkill = () => {
-        if(skills.length >= 5) {
-            alert("登録可能なスキルは5つです。");
-            return;
-        }
-        setSkills(prev => [...prev, { id: nextIdRef.current, name: "", level: "beginner"}]);
+        if(skills.length >= 5) return;
+        const newId = nextIdRef.current;
+        setSkills(prev => [...prev, {id: newId, name: "", level: "beginner"}]);
         nextIdRef.current += 1;
     };
+
     const removeSkill = (id: number) => {
-        if(skills.length <= 1) {
-            alert("スキルは最低一つ必要です。");
-            return;
+        if(skills.length > 1) {
+            setSkills(prev => 
+                prev.filter(skill => skill.id !== id)
+            );
         }
-        setSkills(prev => prev.filter(skill => skill.id !== id));
     };
-    const handleSubmit = (e:React.SubmitEvent<HTMLFormElement>) => {
+
+    const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
         const validateSkills = skills.filter(skill => skill.name.trim());
-        if(validateSkills.length === 0) alert("スキルは一つ以上登録してください");
-        return;
+        if(validateSkills.length === 0) {
+            alert("more then one skill required");
+            return;
+        }
+
     };
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                {skills.map((skill) => (
-                    <div>
-                        <input type="text" value={skill.name} onChange={(e) => updateSkill(skill.id, "name", e.target.value)} />
-                        <select name="" id="" value={skill.level} onChange={(e) => updateSkill(skill.id, "name", e.target.value)}>
-                            <option value="beginner">初級</option>
-                            <option value="middle">中級</option>
-                            <option value="advanced">上級</option>
-                        </select>
-                        <button onClick={addSkill}>追加</button>
-                        <button onClick={() => removeSkill(skill.id)}>削除</button>
-                    </div>
-                ))}
-            </form>
-            <div>
-                <pre>
-                {JSON.stringify((
-                    skills.filter(skill => skill.name.trim()),
-                    null, 2
-                ))}
-                </pre>
-            </div>
-        </>
-    )
-}
+        <form onSubmit={handleSubmit}>
+            {skills.map((skill) => (
+                <div key={skill.id}>
+                    <label htmlFor="">名前</label>
+                    <input type="text" value={skill.name} onChange={(e) => updateSkill(skill.id, "name", e.target.value)} />
+                    <select name="" id="" onChange={(e) => updateSkill(skill.id, "name", e.target.value)}>
+                        <option value="beginner">初級</option>
+                        <option value="middle">中級</option>
+                        <option value="advanced">上級</option>
+                    </select>
+                    <button type="button" disabled={skills.length >= 5} onClick={addSkill}>追加</button>
+                    <button type="button" onClick={() => removeSkill(skill.id)}>削除</button>
+                    <button type="submit">送信</button>
+                </div>
+            ))}    
+        </form>
+    );
+};
 
 export default DynamicFormCopy
