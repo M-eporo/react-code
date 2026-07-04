@@ -1,11 +1,11 @@
 import './App.css'
-import DynamicForm from './form/DynamicForm'
+import ThemeToggle from './components/ThemeToggle'
 
 function App() {
 
   return (
     <>
-      <DynamicForm/>
+      <ThemeToggle/>
     </>
   )
 }
