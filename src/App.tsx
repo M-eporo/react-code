@@ -1,11 +1,11 @@
 import './App.css'
-import ThemeToggle from './components/ThemeToggle'
+import StatusBadge from './components/StatusBadge'
 
 function App() {
 
   return (
     <>
-      <ThemeToggle/>
+      <StatusBadge/>
     </>
   )
 }
