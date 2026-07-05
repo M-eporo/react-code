@@ -1249,16 +1249,16 @@ nav a.active {
   padding: 20px;
   font-family: Arial, sans-serif;
 }
- 
+
 .category-products-title {
   margin-bottom: 20px;
   color: #333;
 }
- 
+
 .category-item {
   margin-bottom: 20px;
 }
- 
+
 .category-header {
   background-color: #f0f0f0;
   padding: 10px;
@@ -1267,30 +1267,30 @@ nav a.active {
   border-radius: 5px;
   transition: background-color 0.2s;
 }
- 
+
 .category-header:hover {
   background-color: #e8e8e8;
 }
- 
+
 .category-toggle-icon {
   margin-right: 10px;
   font-size: 12px;
 }
- 
+
 .category-name {
   font-weight: 500;
 }
- 
+
 .category-count {
   color: #666;
   font-size: 0.9em;
 }
- 
+
 .products-list {
   margin-left: 20px;
   margin-top: 10px;
 }
- 
+
 .product-item {
   padding: 8px;
   border: 1px solid #eee;
@@ -1299,17 +1299,100 @@ nav a.active {
   border-radius: 3px;
   transition: background-color 0.2s;
 }
- 
+
 .product-item:hover {
   background-color: #f0f0f0;
 }
- 
+
 .product-name {
   font-weight: bold;
   color: #333;
 }
- 
+
 .product-price {
   margin-left: 10px;
   color: #666;
+}
+
+.employee-sort {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.employee-sort h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.reset-button {
+  padding: 8px 16px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.reset-button:hover {
+  background-color: #5a6268;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.employee-table th {
+  cursor: pointer;
+  user-select: none;
+  background: #f8f9fa;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+}
+
+.employee-table th.sortable:hover {
+  background: #e9ecef;
+}
+
+.employee-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.employee-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.info {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.info p {
+  margin: 0;
 }
