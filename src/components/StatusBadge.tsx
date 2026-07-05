@@ -1,4 +1,3 @@
-import styles from '../styles/statusbadge.module.css';
 import { useState } from 'react';
 
 type Status = "success" | "warning" | "error" | "info";

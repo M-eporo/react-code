@@ -1,11 +1,11 @@
 import './App.css'
-import StatusBadge from './components/StatusBadge'
+import ProductFilter from './components/ProductFilter'
 
 function App() {
 
   return (
     <>
-      <StatusBadge/>
+      <ProductFilter/>
     </>
   )
 }
