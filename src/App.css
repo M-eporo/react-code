@@ -1244,3 +1244,72 @@ nav a.active {
   color: #ef4444;
   font-weight: 500;
 }
+
+.category-products-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+ 
+.category-products-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+ 
+.category-item {
+  margin-bottom: 20px;
+}
+ 
+.category-header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+ 
+.category-header:hover {
+  background-color: #e8e8e8;
+}
+ 
+.category-toggle-icon {
+  margin-right: 10px;
+  font-size: 12px;
+}
+ 
+.category-name {
+  font-weight: 500;
+}
+ 
+.category-count {
+  color: #666;
+  font-size: 0.9em;
+}
+ 
+.products-list {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+ 
+.product-item {
+  padding: 8px;
+  border: 1px solid #eee;
+  margin-bottom: 5px;
+  background-color: #fafafa;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+ 
+.product-item:hover {
+  background-color: #f0f0f0;
+}
+ 
+.product-name {
+  font-weight: bold;
+  color: #333;
+}
+ 
+.product-price {
+  margin-left: 10px;
+  color: #666;
+}

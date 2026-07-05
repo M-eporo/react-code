@@ -1,11 +1,11 @@
 import './App.css'
-import ProductFilter from './components/ProductFilter'
+import CategoryProducts from './components/CategoryProducts'
 
 function App() {
 
   return (
     <>
-      <ProductFilter/>
+      <CategoryProducts/>
     </>
   )
 }
