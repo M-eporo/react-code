@@ -1,11 +1,11 @@
 import './App.css'
-import StateWatcher from './useEffect/StateWatcher'
+import DimensionCalculator from './useEffect/DimensionCalculator'
 
 function App() {
 
   return (
     <>
-      <StateWatcher/>
+      <DimensionCalculator/>
     </>
   )
 }
