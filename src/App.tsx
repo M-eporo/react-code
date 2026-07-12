@@ -1,11 +1,11 @@
 import './App.css'
-import EmployeeSort from './components/EmployeeSort'
+import StateWatcher from './useEffect/StateWatcher'
 
 function App() {
 
   return (
     <>
-      <EmployeeSort/>
+      <StateWatcher/>
     </>
   )
 }
