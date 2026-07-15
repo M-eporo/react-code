@@ -1,11 +1,11 @@
 import './App.css'
-import DimensionCalculator from './useEffect/DimensionCalculator'
+import UserSettings from './useEffect/UserSettings'
 
 function App() {
 
   return (
     <>
-      <DimensionCalculator/>
+      <UserSettings/>
     </>
   )
 }
