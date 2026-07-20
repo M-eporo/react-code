@@ -7,27 +7,44 @@ type UserSettings = {
     notifications: boolean;
 };
 
-const isTheme = (value: string): value is UserSettings['theme'] => {
+const STORAGE_KEY = 'userSettings';
+
+const isTheme = (value: unknown): value is UserSettings['theme'] => {
     return value === 'light' || value === 'dark' || value === 'auto';
 };
 
-const isFontSize = (value: string): value is UserSettings['fontSize'] => {
+const isFontSize = (value: unknown): value is UserSettings['fontSize'] => {
     return value === 'small' || value === 'medium' || value === 'large';
 };
 
-const isLanguage = (value: string): value is UserSettings['language'] => {
+const isLanguage = (value: unknown): value is UserSettings['language'] => {
     return value === 'ja' || value === 'en' || value === 'cn';
 };
 
+const isUserSettings = (
+    value: unknown
+): value is UserSettings => {
+    if(typeof value !=="object" || value === null) return false;
+    return (
+        "theme" in value &&
+        "fontSize" in value &&
+        "language" in value &&
+        "notifications" in value &&
+        isTheme(value.theme) &&
+        isFontSize(value.fontSize) &&
+        isLanguage(value.language) && 
+        typeof value.notifications === "boolean"
+    );
+
+}
+
 const UserSettings = () => {
-    const [settings, setSettings] = useState({
+    const [settings, setSettings] = useState<UserSettings>({
         theme: "light",
-        fontSize: "mediuem",
+        fontSize: "medium",
         language: "ja",
         notifications: true,
     });
-
-    const [isInitialized, setIsInitialized] = useState(false);
 
     const updatingSettings = <K extends keyof UserSettings>
         (
@@ -38,27 +55,40 @@ const UserSettings = () => {
             ...prev,
             [name]: value
         }));
-        setIsInitialized(false);
     };
 
     const resetSettings = () => {
         setSettings({
             theme: "light",
-            fontSize: "mediuem",
+            fontSize: "medium",
             language: "ja",
             notifications: true,
         });
-        setIsInitialized(true);
-        localStorage.removeItem('userSettings');
     };
 
     useEffect(() => {
-        
+        const storagedSettings = localStorage.getItem(STORAGE_KEY);
+        if(!storagedSettings) {
+            return;
+        }
+
+        try {
+            const parsedSettings: unknown = JSON.parse(storagedSettings);
+
+            if(isUserSettings(parsedSettings)) {
+                setSettings((prev) => ({
+                    ...prev,
+                    ...parsedSettings
+                }))
+            }
+        } catch {
+            console.error('保尊されている設定が読み込めませんでした。');
+        }
     }, []);
 
     useEffect(() => {
-        const json = JSON.stringify(settings, null, 2);
-        localStorage.setItem('userSettings', json);
+        const jsoned = JSON.stringify(settings, null, 2);
+        localStorage.setItem(STORAGE_KEY, jsoned);
     }, [settings]);
 
     return (
@@ -75,7 +105,7 @@ const UserSettings = () => {
                                 updatingSettings("theme", value);
                             }
                         }}
-                    name="" id="">
+                    >
                         <option value="light">ライト</option>
                         <option value="dark">ダーク</option>
                         <option value="auto">自動</option>
@@ -93,7 +123,7 @@ const UserSettings = () => {
                                 updatingSettings("fontSize", value);
                             }
                         }}
-                    name="" id="">
+                    >
                         <option value="small">小</option>
                         <option value="medium">中</option>
                         <option value="large">大</option>
@@ -111,7 +141,7 @@ const UserSettings = () => {
                                 updatingSettings("language", value);
                             }
                         }}
-                    name="" id="">
+                    >
                             <option value="ja">日本語</option>
                             <option value="en">英語</option>
                             <option value="cn">中国語</option>
