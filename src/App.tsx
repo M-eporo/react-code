@@ -1,11 +1,11 @@
 import './App.css'
-import UserSettings from './useEffect/UserSettings'
+import SearchDebounce from './useEffect/SearchDebounce'
 
 function App() {
 
   return (
     <>
-      <UserSettings/>
+      <SearchDebounce/>
     </>
   )
 }
