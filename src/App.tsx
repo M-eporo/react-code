@@ -1,11 +1,11 @@
 import './App.css'
-import SearchDebounce from './useEffect/SearchDebounce'
+import UserFetch from './useEffect/UserFetch'
 
 function App() {
 
   return (
     <>
-      <SearchDebounce/>
+      <UserFetch/>
     </>
   )
 }
