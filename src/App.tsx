@@ -1,11 +1,11 @@
 import './App.css'
-import UserFetch from './useEffect/UserFetch'
+import WebSocketChat from './useEffect/WebSocketChat'
 
 function App() {
 
   return (
     <>
-      <UserFetch/>
+      <WebSocketChat/>
     </>
   )
 }
