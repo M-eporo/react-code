@@ -1,13 +1,13 @@
 import './App.css'
-import WebSocketChat from './useEffect/WebSocketChat'
+import UseDebounce from './hooks/useDebounce';
 
 function App() {
 
   return (
     <>
-      <WebSocketChat/>
+      <UseDebounce />
     </>
-  )
+  );
 }
 
 export default App
