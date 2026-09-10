@@ -1,5 +1,5 @@
 import './App.css'
-import UseDebounce from './hooks/useIntersectionObserver';
+import UseDebounce from './hooks/useClipboard';
 
 function App() {
 
