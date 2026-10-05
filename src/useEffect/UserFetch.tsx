@@ -52,7 +52,7 @@ const UserFetch = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState<string | null>(null);
     const [retryCount, setRetryCount] = useState(0);
-    
+
     useEffect(() => {
         const fetchUsers = async () => {
             setIsLoading(true);
@@ -78,7 +78,7 @@ const UserFetch = () => {
                     setErrors("予期しないエラーが発生しました。");
                 }
                 console.error(error);
-                
+
             } finally {
                 setIsLoading(false);
             }

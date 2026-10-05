@@ -1,11 +1,11 @@
+import ThemeContext from './components/contextapi/ThemeContext';
 import './App.css'
-import UseDebounce from './hooks/useClipboard';
 
 function App() {
 
   return (
     <>
-      <UseDebounce />
+      <ThemeContext />
     </>
   );
 }
