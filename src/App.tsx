@@ -1,11 +1,11 @@
-import ThemeContext from './components/contextapi/ThemeContext';
 import './App.css'
+import OptimizeContext from './components/contextapi/OptimizeContext';
 
 function App() {
 
   return (
     <>
-      <ThemeContext />
+      <OptimizeContext />
     </>
   );
 }

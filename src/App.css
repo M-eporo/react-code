@@ -1396,3 +1396,9 @@ nav a.active {
 .info p {
   margin: 0;
 }
+
+img {
+  display: block;
+  min-width: 100%;
+  height: auto;
+}
